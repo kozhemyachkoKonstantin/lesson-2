@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.animation-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    border: 1px red solid;
+}
+.circle {
+    background-color: aqua;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+   transition: border-radius .5s linear, margin-right 1s, background-color 2s, transform 2s linear 0.3s;/*transition нужно добавить к блоку если нужно чтобы был плавный возврат */
+    margin-bottom: 30px;
+}
+.animation-container:hover .circle {
+    border-radius: 0;
+    background-color: rebeccapurple;*/
+    margin-right: 500px;
+    transition: border-radius .5s linear, margin-right 1s linear; /*можно указать конкретное свойство которое требует плавного перехода например border-radius*/
+    transform: rotate(90deg); 
+}
+.circle-1 {
+    transition: 3s ease;
+    animation: jump 3s 5/*2 повторения*/;
+    animation-fill-mode: forwards; /*по окончанию оставить значения анимации указанные в 100%*/
+}
+
+@keyframes jump {
+    0% {
+        height: 200px;
+    }
+    10% {
+        height: 100px;
+    }
+    30% {
+        height: 150px;
+        margin-bottom: 50px;
+        background-color: red;
+    }
+    40% {
+        height: 200px;
+        margin-bottom: 100px;
+    }
+    50% {
+        height: 200px;
+        margin-bottom: 50px;
+    }
+    70% {
+        height: 200px;
+    }
+    100% {
+        height: 200px;
+        background-color: rebeccapurple;
+
+        margin-bottom: 50px;
+    }
+}
+
+
+
+.circle-2 {
+    transition: 3s ease-in;
+}
+.circle-3 {
+    transition: 3s ease-in-out;
+}
+.circle-4 {
+    transition: 3s step-end;
+}
+.circle-5 {
+    transition: 3s linear;
+}
+.circle-6 {
+    transition: 3s step-end;
+}
+.circle-7 {
+    transition: 3s step(5, end);
+}
